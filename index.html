@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Validación de Cadenas | Autómatas y Lenguajes Formales</title>
+  <meta name="description" content="Interfaz para validar cadenas contra una expresión regular." />
+  <link rel="stylesheet" href="index.css" />
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="title">AUTÓMATAS Y LENGUAJES FORMALES</h1>
+      <p class="subtitle">Validación De Cadenas</p>
+    </div>
+  </header>
+
+  <main class="container main">
+    <!-- Entrada de cadenas -->
+    <section class="card input-card" role="region" aria-labelledby="ingreso-cadenas">
+      <div class="card-header">
+        <h2 id="ingreso-cadenas">Ingresa tus cadenas</h2>
+        <p class="hint">Escribe <strong>una cadena por línea</strong>. Se admiten múltiples cadenas.</p>
+      </div>
+
+      <div class="field">
+        <label class="sr-only" for="cadenas">Cadenas (una por línea)</label>
+        <textarea
+          id="cadenas"
+          name="cadenas"
+          placeholder="Ejemplo:
+aabb
+abbab
+ε"
+          autofocus
+        ></textarea>
+      </div>
+
+      <div class="actions">
+        <!-- Tu lógica puede ajustar este texto según la cantidad de líneas -->
+        <button
+          id="btn-comprobar"
+          class="btn btn-primary"
+          data-singular="Comprobar cadena"
+          data-plural="Comprobar cadenas"
+        >
+          Comprobar cadena
+        </button>
+        <button id="btn-limpiar" class="btn btn-ghost" type="button">Limpiar</button>
+      </div>
+      <p class="note">* El botón puede cambiar a “Comprobar cadenas” cuando detectes varias líneas.</p>
+    </section>
+
+    <!-- Resultados -->
+    <section class="results-grid" role="region" aria-labelledby="resultados">
+      <h2 id="resultados" class="sr-only">Resultados</h2>
+
+      <div class="card results accepted" aria-live="polite">
+        <div class="card-header sticky">
+          <h3 class="results-title">
+            <span class="dot dot-accepted" aria-hidden="true"></span> Aceptadas
+          </h3>
+          <span class="badge" id="count-aceptadas">0</span>
+        </div>
+        <ul id="lista-aceptadas" class="list" aria-label="Cadenas aceptadas"></ul>
+        <p id="empty-aceptadas" class="empty">No hay cadenas aceptadas aún.</p>
+      </div>
+
+      <div class="card results rejected" aria-live="polite">
+        <div class="card-header sticky">
+          <h3 class="results-title">
+            <span class="dot dot-rejected" aria-hidden="true"></span> Rechazadas
+          </h3>
+          <span class="badge" id="count-rechazadas">0</span>
+        </div>
+        <ul id="lista-rechazadas" class="list" aria-label="Cadenas rechazadas"></ul>
+        <p id="empty-rechazadas" class="empty">No hay cadenas rechazadas aún.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="credit">
+        Hecho por: <strong>Alejandro Rafael Herrera López</strong>, <strong>Juan Eliezer Raymundo Lucas</strong> y
+        <strong>Andy Ronaldo Ramírez Ortíz</strong>
+      </p>
+    </div>
+  </footer>
+
+  <script src="validacion.js"></script>
+</body>
+</html>
